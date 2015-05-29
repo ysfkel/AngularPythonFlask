@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %} Builder Page | {{super()}} {% endblock %}
+
+{% block content %}
+
+<div class="container {{saves.get('color','')}} ">
+<form action="/save" method="POST">
+	<div class="row">
+		<div class="col-md-12">
+			<input type="text" class="form-control" value={{saves.get('name','')}} />
+		</div>
+	</div>
+	
+	<div class="row ">
+		<div class="col-md-12">
+			{% for color in options["colors"] %}
+			   
+			
+			    <span class="appearance {{color}}">  <input class="{{color}}" type="radio" id="{{color}}" name="color" value="{{color}}" 
+				{% if saves.get('color')==color %} checked {% endif %} /></span>
+			     <label for="{{color}}"></label>
+			{% endfor %}
+			<input type="submit" class="btn btn-info btn-block" value="Update" />
+		</div>
+	</div>
+</form>
+</div>
+
+
+
+
+{% endblock %}
