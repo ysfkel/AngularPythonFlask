@@ -1,6 +1,42 @@
 /* BASE STYLES
 ============================================================================= */
 html         { overflow-y:hidden; }
+
+.appearance{
+	padding: 3px;
+	
+	border-radius:360px;
+}
+.pink{
+	border: 2px soloid pink;
+	background:pink;
+	
+}
+.purple{
+	border: 2px soloid purple;
+	background:purple;
+}
+.black{
+	border: 2px soloid black;
+	background:black;
+}
+.blue{
+	border: 2px soloid blue;
+	background:blue;
+}
+.green{
+	border: 2px soloid green;
+	background:green;
+}
+.orange{
+	border: 2px soloid orange;
+	background:orange;
+}
+.red{
+	border: 2px soloid red;
+	background:red;
+}
+		
 .page        { 
 	bottom:0; 
 	padding-top:200px;
