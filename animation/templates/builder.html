@@ -24,6 +24,35 @@
 			<input type="submit" class="btn btn-info btn-block" value="Update" />
 		</div>
 	</div>
+	
+	<div >
+		<div>
+		   {% for category, choices in options.items() %}	
+		   {% if category != 'colors' %}
+			    <div class="row">
+					<div class='col-md-8'>
+						<p class="">
+							{{category.title()}}
+						</p>
+					</div>
+					<div class="col-md-4">
+						<input  type="radio" name="{{category}}" id="no_{{category}}_icon" value="" {% if not saves.get(category) %} checked {% endif %}/></input>
+							<label for="no_{{category}}_icon"></label>
+								{% for choice in choices %}
+								   <ul >
+									   <li >
+										
+										   	<input  type="radio" name="{{choice}}" id="{{category}}-{{choice}}_icon" value="{{choice}}" {% if saves.get(choice)==choice %}checked {% endif %}/></input>
+												   <label for="{{category}}-{{choice}}_icon">{{choice}}</label>
+									   </li>
+								   </ul>
+								{% endfor %}
+					</div>
+				</div>
+		   {% endif %}
+		   {% endfor %}
+		</div>
+	</div>
 </form>
 </div>
 
